@@ -1,62 +1,85 @@
-/*  Navbar Styles */
+/* Navbar Styles */
 nav {
-  background-color: #333;
   padding: 10px 0;
   text-align: center;
 }
 
+/* Navbar List Styles */
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: none; /* Hide menu by default for mobile */
-  flex-direction: column;
+  display: flex; /* Show menu in row format on larger screens */
+  flex-direction: row; /* Align items horizontally */
 }
 
+/* Navbar List Item Styles */
 nav ul li {
   padding: 10px;
 }
 
 nav ul li a {
-  color: white;
   text-decoration: none;
   display: block;
 }
 
-/*  Navbar Toggle Button */
-#navToggle {
-  background-color: #333;
-  color: white;
+/*Dropdown Button Styles*/ 
+.dropbtn {
   padding: 10px 15px;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  display: block; /* Ensures visibility */
-  margin: 10px auto;
-  text-align: center;
-  position: relative;
-  z-index: 1000;
+  display: none; /* Hide dropdown button by default */
 }
 
-/* Show Menu when 'show' class is added */
-nav ul.show {
-  display: flex;
-  flex-direction: column;
+/* Dropdown Content Styles */
+.dropdown-content {
+  display: none; /* Hide dropdown content by default */
+  background-color: #f9f9f9; /* Add a background color to the dropdown content */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a box shadow to the dropdown content */
+  z-index: 1; /* Ensure the dropdown content is on top of other elements */
+  padding: 10px; /* Add padding to the dropdown content */
 }
 
-/*  Desktop Navigation */
-@media (min-width: 768px) {
-  #navToggle {
-    display: none; /* Hide toggle button on larger screens */
+/* Style the links inside the dropdown content */
+.dropdown-content a {
+  color: black; /* Set the text color of the links */
+  padding: 10px; /* Add padding to the links */
+  text-decoration: none; /* Remove the underline from the links */
+  display: block; /* Display the links as block elements */
+}
+
+/* Style the links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Add a background color on hover */
+}
+
+/* Show dropdown content when 'show' class is added */
+.dropdown-content.show {
+  display: block; /* Show dropdown content */
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+  .nav-buttons {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
-  nav ul {
+}
+
+/* Desktop Navigation Styles */
+@media (min-width: 769px) {
+  .nav-buttons {
     display: flex; /* Show menu in row format */
-    flex-direction: row;
-    justify-content: center;
+  }
+  
+  .dropbtn {
+    display: none; /* Hide dropdown button on larger screens */
   }
 }
 
-/*  Image Slideshow */
+/* Image Slideshow */
 .exhibition-card {
   display: none; /* Hide all cards by default */
   transition: opacity 1s ease; /* Smooth transition for fade effect */
@@ -74,9 +97,7 @@ nav ul.show {
   height: auto; /* Maintain aspect ratio */
   max-width: 500px; /* Limit maximum width */
   border-radius: 8px; /* Add rounded corners */
-  margin: auto; /* Center images */
 }
-
 
 /* Light Mode (Default) */
 :root {
@@ -84,7 +105,7 @@ nav ul.show {
   --text-color: black;
   --highlight-bg: yellow;
   --nav-bg: #333;
-  --nav-text: white;
+  --nav-text: black;
   --button-bg: black;
   --button-text: white;
   --light-green-bg: #d4ff91; /* Light green background */
@@ -96,7 +117,6 @@ nav ul.show {
   --text-color: #e0e0e0; /* Light grey text */
   --highlight-bg: #ffeb3b; /* Keep highlight background */
   --nav-bg: #222; /* Darker navigation background */
-  --nav-text: #ddd; /* Lighter text for nav */
   --button-bg: #444; /* Dark button background */
   --button-text: white; /* Keep button text white */
   --light-green-bg: #4a7c2f; /* Darker green for contrast in dark mode */
@@ -123,11 +143,11 @@ button {
 
 /* Modify light green intro section for dark mode */
 .intro {
-    background: var(--light-green-bg); 
-    color: black; /* Ensure text is black for contrast */
+  background: var(--light-green-bg); 
+  color: black; /* Ensure text is black for contrast */
 }
 
 /* Footer */
 footer {
-    color: var(--text-color);
+  color: var(--text-color);
 }
