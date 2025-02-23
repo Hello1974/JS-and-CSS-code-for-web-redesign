@@ -1,23 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   // Navbar Toggle for Small Screens
-  const navToggle = document.getElementById("navToggle");
-  const navList = document.querySelector(".nav-buttons");
+  const navToggle = document.querySelector(".dropbtn"); // Use the dropdown button
+  const dropdownContent = document.querySelector(".dropdown-content"); // Dropdown content
 
   if (navToggle) {
     navToggle.addEventListener("click", function () {
-      navList.classList.toggle("show");
+      dropdownContent.classList.toggle("show"); // Toggle visibility of the dropdown content
     });
   }
+
+  // Hide the dropdown menu on larger screens
+  function adjustDropdownVisibility() {
+    if (window.innerWidth > 768) {
+      dropdownContent.classList.remove("show"); // Hide the dropdown content
+      navToggle.style.display = "none"; // Hide the toggle button
+    } else {
+      navToggle.style.display = "block"; // Show the toggle button on small screens
+    }
+  }
+
+  // Check screen size on load and resize
+  adjustDropdownVisibility();
+  window.addEventListener("resize", adjustDropdownVisibility);
 
   // Image Slideshow for Exhibitions
   let currentSlide = 0;
   const exhibitionCards = document.querySelectorAll(".exhibition-card");
 
   function showNextSlide() {
-    exhibitionCards[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % exhibitionCards.length;
-    exhibitionCards[currentSlide].classList.add("active");
+    exhibitionCards[currentSlide].classList.remove("active"); // Hide the current slide
+    currentSlide = (currentSlide + 1) % exhibitionCards.length; // Move to the next slide
+    exhibitionCards[currentSlide].classList.add("active"); // Show the new current slide
   }
 
   if (exhibitionCards.length > 0) {
@@ -34,11 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
   darkModeBtn.style.right = "10px";
   darkModeBtn.style.padding = "10px";
   darkModeBtn.style.zIndex = "1000";
-  document.body.appendChild(darkModeBtn);
+  document.body.appendChild(darkModeBtn); // Append the button to the body
 
   function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode"); // Toggle dark mode class
 
+    // Update button text and save the theme preference
     if (document.body.classList.contains("dark-mode")) {
       darkModeBtn.innerText = "☀ Light Mode";
       localStorage.setItem("theme", "dark");
@@ -48,11 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  darkModeBtn.addEventListener("click", toggleDarkMode);
+  darkModeBtn.addEventListener("click", toggleDarkMode); // Add click event to toggle dark mode
 
-  // Apply saved theme
+  // Apply saved theme on page load
   if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    darkModeBtn.innerText = "☀ Light Mode";
+    document.body.classList.add("dark-mode"); // Enable dark mode if saved
+    darkModeBtn.innerText = "☀ Light Mode"; // Update button text
   }
 });
