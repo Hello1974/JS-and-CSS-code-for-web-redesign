@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleDarkMode() {
     document.body.classList.toggle("dark-mode"); // Toggle dark mode class
+    document.documentElement.classList.toggle("dark-mode"); // Toggle dark mode class on the root element
 
     // Update button text and save the theme preference
     if (document.body.classList.contains("dark-mode")) {
