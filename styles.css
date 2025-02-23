@@ -13,10 +13,11 @@ body {
 }
 
 body.dark-mode {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('yaleschoolofart.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('yaleschoolofart.jpeg');
     background-size: cover;
     background-attachment: fixed;
 }
+
 header {
     padding: 20px;
     text-align: center;
