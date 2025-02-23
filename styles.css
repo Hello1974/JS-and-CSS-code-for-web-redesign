@@ -3,57 +3,17 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: url('yaleschoolofart.jpeg');
-  background-size: cover;
-  background-attachment: fixed;
-  color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('yaleschoolofart.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
 }
 
-.dark-mode {
-  background-image: none;
-  background-color: #121212;
-}
-
-.dark-mode .intro, 
-.dark-mode .announcement {
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-.dark-mode .exhibition-card {
-  background-color: #444;
-  color: #e0e0e0;
-}
-
-.dark-mode nav ul li a {
-  color: #e0e0e0;
-}
-
-.dark-mode footer p {
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-.dark-mode .nav-buttons a {
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-.dark-mode .nav-buttons a:hover {
-  background-color: #444;
-}
-
-.dark-mode .address span {
-  background-color: #333;
-  color: #e0e0e0;
-}
-
-.dark-mode .highlight span {
-  background-color: #666;
-  color: #e0e0e0;
+body.dark-mode {
+    filter: brightness(0.5) contrast(0.8);
 }
 
 header {
