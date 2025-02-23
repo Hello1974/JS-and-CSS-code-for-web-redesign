@@ -16,6 +16,11 @@ body.dark-mode {
     filter: brightness(0.5) contrast(0.8);
 }
 
+/* You may also need this addition to fix text readability */
+body.dark-mode img {
+    filter: brightness(1) contrast(1) invert(1);
+}
+
 header {
     padding: 20px;
     text-align: center;
