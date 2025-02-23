@@ -1,0 +1,133 @@
+/*  Navbar Styles */
+nav {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* Hide menu by default for mobile */
+  flex-direction: column;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/*  Navbar Toggle Button */
+#navToggle {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: block; /* Ensures visibility */
+  margin: 10px auto;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Show Menu when 'show' class is added */
+nav ul.show {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  Desktop Navigation */
+@media (min-width: 768px) {
+  #navToggle {
+    display: none; /* Hide toggle button on larger screens */
+  }
+  nav ul {
+    display: flex; /* Show menu in row format */
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/*  Image Slideshow */
+.exhibition-card {
+  display: none; /* Hide all cards by default */
+  transition: opacity 1s ease; /* Smooth transition for fade effect */
+  text-align: center; /* Center align text */
+  margin: 20px 0; /* Add some spacing between exhibition cards */
+}
+
+.exhibition-card.active {
+  display: block; /* Show only the active card */
+  opacity: 1; /* Ensure active card is fully opaque */
+}
+
+.exhibition-card img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 500px; /* Limit maximum width */
+  border-radius: 8px; /* Add rounded corners */
+  margin: auto; /* Center images */
+}
+
+
+/* Light Mode (Default) */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --highlight-bg: yellow;
+  --nav-bg: #333;
+  --nav-text: white;
+  --button-bg: black;
+  --button-text: white;
+  --light-green-bg: #d4ff91; /* Light green background */
+}
+
+/* Dark Mode */
+.dark-mode {
+  --bg-color: #121212; /* Dark background */
+  --text-color: #e0e0e0; /* Light grey text */
+  --highlight-bg: #ffeb3b; /* Keep highlight background */
+  --nav-bg: #222; /* Darker navigation background */
+  --nav-text: #ddd; /* Lighter text for nav */
+  --button-bg: #444; /* Dark button background */
+  --button-text: white; /* Keep button text white */
+  --light-green-bg: #4a7c2f; /* Darker green for contrast in dark mode */
+}
+
+/* Apply Colors */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav {
+  background-color: var(--nav-bg);
+}
+
+nav ul li a {
+  color: var(--nav-text);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+/* Modify light green intro section for dark mode */
+.intro {
+    background: var(--light-green-bg); 
+    color: black; /* Ensure text is black for contrast */
+}
+
+/* Footer */
+footer {
+    color: var(--text-color);
+}
